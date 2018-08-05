@@ -13,6 +13,10 @@ import { TasksComponent } from './tasks/tasks.component';
 import { TasksAddComponent } from './tasks/tasks-add/tasks-add.component';
 import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
 import { TaskService } from './tasks/task.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -22,7 +26,11 @@ import { TaskService } from './tasks/task.service';
     AddUserComponent,
     TasksComponent,
     TasksAddComponent,
-    TasksListComponent
+    TasksListComponent,
+    NavbarComponent,
+    FooterComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule, 
