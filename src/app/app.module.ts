@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 // import { DragulaModule } from 'ng2-dragula';
+// import { DragAndDropModule } from 'angular-draggable-droppable';
+import { NgDragDropModule } from 'ng-drag-drop';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,10 @@ import { HomeComponent } from './home/home.component';
     RoutingModule,
     HttpClientModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule, 
+    // DragAndDropModule.forRoot()
     // DragulaModule 
+    NgDragDropModule.forRoot()
   ],
   providers: [
     UserService,

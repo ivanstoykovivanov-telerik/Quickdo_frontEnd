@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../../models/task.model'; 
 import { TaskService } from '../task.service';
-// import { DragulaService } from 'ng2-dragula';
-
 
 @Component({
   selector: 'app-tasks-list',
@@ -12,16 +10,9 @@ import { TaskService } from '../task.service';
 export class TasksListComponent implements OnInit {
   
   tasks: Task[] = []; 
-  //Dragula : 
-  title= "Testing ng comps"; 
-  options: any = {
-    removeOnSpill: true
-  };
-
 
   constructor(
     private taskService: TaskService, 
-    // private dragulaService: DragulaService
   ) { }
 
   ngOnInit() {
@@ -44,5 +35,6 @@ export class TasksListComponent implements OnInit {
   getDueDateLabel(task: Task){
     return  task.completed ? 'badge-success' : 'badge-danger';  
   }
+
 
 }
