@@ -18,7 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
-
+// import { DragulaModule } from 'ng2-dragula';
 
 @NgModule({
   declarations: [
@@ -27,12 +27,13 @@ import { HomeComponent } from './home/home.component';
     AddUserComponent,
     TasksComponent,
     TasksAddComponent,
-    TasksListComponent,
+    TasksListComponent, 
     NavbarComponent,
     FooterComponent,
     LoginComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent, 
+    
   ],
   imports: [
     BrowserModule, 
@@ -40,6 +41,7 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     FormsModule,
     AngularFontAwesomeModule
+    // DragulaModule 
   ],
   providers: [
     UserService,

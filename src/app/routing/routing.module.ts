@@ -14,7 +14,9 @@ const routes: Routes = [
   {path  : "users" , component : UserComponent},
   {path  : "tasks" , component : TasksComponent}, 
   {path  : "profile" , component : ProfileComponent},
-  {path  : "home" , component : HomeComponent}
+  {path  : "home" , component : HomeComponent}, 
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 ]
 
 @NgModule({

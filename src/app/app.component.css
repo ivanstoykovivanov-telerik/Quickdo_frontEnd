@@ -1,9 +1,18 @@
-/* 
-.content{
-    margin : 150px 5px;
-} */
+
+* {
+    margin: 0; 
+    padding: 0; 
+    /* color: red;  */
+}
+
+body, html{
+    height: 100%; 
+}
 
 .r_link{
     font-size: 2.5em;
     color : blueviolet;
 }
+
+
+
