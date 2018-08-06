@@ -1,25 +1,89 @@
-<div class="col-md-6">
+<!-- <div class="col-md-6">
   <h2 class="text-center">Add User</h2>
-
   <form>
-  <div class="form-group">
+    <div class="form-group">
     <label for="email">Email address:</label>
     <input type="email" [(ngModel)]="user.email" 
         placeholder="Email" name="email" class="form-control" id="email">
   </div>
- 
   <div class="form-group">
     <label for="firstName">First Name:</label>
     <input [(ngModel)]="user.firstName" 
         placeholder="First Name" name="firstName" class="form-control" id="firstName">
   </div>
-
   <div class="form-group">
     <label for="lastName">Last Name:</label>
     <input [(ngModel)]="user.lastName" 
         placeholder="Last name" name="lastName" class="form-control" id="lastName">
   </div>
-
-  <button class="btn btn-success" (click)="createUser()">Create</button>
+  <button class="btn btn-success" (click)="createUser()">Create <i class="fa fa-user-plus"></i></button>
 </form>
-</div>
+</div> -->
+
+
+<!-- REGISTRATION FORM -->
+<section class="reg-form">
+  <div class="container">
+      <h3 class="text-center text-uppercase mb-5">Create your account</h3>
+      
+      <form>
+          <!-- TEXT FIELD GROUPS -->
+          <div class="row justify-content-center">
+              <div class="form-group col-10 col-md-4">
+                  <input class="form-control" type="text" id="firstName" placeholder="First Name" [(ngModel)]="user.firstName"  name="firstName">
+              </div>
+          </div>
+
+          <div class="row justify-content-center">
+              <div class="form-group col-10 col-md-4">
+                  <input class="form-control" type="text" id="lastName" placeholder="Last Name" [(ngModel)]="user.lastName" name="lastName" >
+              </div>
+          </div>
+          <div class="row justify-content-center">
+              <div class="form-group col-10 col-md-4">
+                  <input class="form-control" type="text" id="username" placeholder="Username" [(ngModel)]="user.userName" name="userName">
+              </div>
+          </div>
+          <div class="row justify-content-center">
+              <div class="form-group col-10 col-md-4">
+                  <input class="form-control" type="email" id="email" placeholder="Email" [(ngModel)]="user.email"  name="email" >
+                  <small class="form-text text-muted">Your private data will never be shared to third parties</small>
+              </div>
+          </div>
+
+          <div class="row justify-content-center">
+              <div class="form-group col-10 col-md-4">
+                  <input class="form-control" type="password" id="password" placeholder="Password" [(ngModel)]="user.password" name="user.password">
+              </div>
+          </div>
+
+          <div class="row justify-content-center">
+              <div class="form-group col-10 col-md-4">
+                  <input class="form-control" type="password" id="rep_password" placeholder="Repeat Password" [(ngModel)]="user.repPassword" name="user.repPassword">
+              </div>
+          </div>
+
+          <div class="row justify-content-center">
+              <div class="form-group col-10 col-md-4">
+                  <label for="gender">Gender</label>
+                  <select class="form-control" id="gender">
+                      <option>Male</option>
+                      <option>Female</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="row justify-content-center">
+              <div class="form-group col-8 col-md-6 col-lg-3 mt-4">
+                  <input type="file" id="myfile">
+                  <label class="custom-file-label" for="myfile">Profile picture</label>
+              </div>  
+          </div>
+          <div class="row justify-content-center">
+              <button class="btn btn-outline-success btn-lg mt-5" (click)="createUser()" type="button">
+                      <i class="fa fa-user-plus mr-2"></i>Register
+              </button>
+          </div>
+      </form>
+  </div>
+</section>

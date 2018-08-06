@@ -6,7 +6,9 @@
           <th class="hidden">Id</th>
           <th>FirstName</th>
           <th>LastName</th>
+          <th>Username</th>
           <th>Email</th>
+          <th>Password</th>
           <th>Action</th>
           <th>  </th>
         </tr>
@@ -15,9 +17,10 @@
         <tr *ngFor="let user of users">
           <td class="hidden">{{user.id}}</td>
           <td>{{user.firstName}}</td>
-
           <td>{{user.lastName}}</td>
+          <td>{{user.userName}}</td>
           <td>{{user.email}}</td>
+          <td>{{user.password}}</td>
           <td>
             <i class="btn fa fa-trash-o text-danger del_btn" aria-hidden="true" (click)="deleteUser(user)">
             </i>
@@ -29,9 +32,6 @@
         </tr>
       </tbody>
     </table>
-    <!-- ** -->
-    <app-tasks></app-tasks>
-    <!-- ** -->
 </div>
 
 

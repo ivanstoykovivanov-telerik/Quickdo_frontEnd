@@ -4,11 +4,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from '../user/user.component';
 import { AddUserComponent } from '../user/add-user/add-user.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { LoginComponent } from '../login/login.component';
+import { TasksComponent } from '../tasks/tasks.component';
+import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
-  {path  : "tasks" , component : UserComponent}, 
   {path  : "register", component : AddUserComponent}, 
-  {path  : "profile" , component : ProfileComponent}
+  {path  : "login" , component : LoginComponent},
+  {path  : "users" , component : UserComponent},
+  {path  : "tasks" , component : TasksComponent}, 
+  {path  : "profile" , component : ProfileComponent},
+  {path  : "home" , component : HomeComponent}
 ]
 
 @NgModule({

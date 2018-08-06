@@ -33,8 +33,8 @@ export class UserComponent implements OnInit {
   }
 
   editUser(user:User){
+    //TODO
     console.log("Edit user");
-    
   }
 
 }
