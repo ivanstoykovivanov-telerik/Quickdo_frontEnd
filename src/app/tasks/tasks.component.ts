@@ -7,43 +7,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
-  items = [
-    {name: "Feed the cat", type: "fruit"},
-    {name: "Walk the horse", type: "vegetable"},
-    {name: "Water the grass", type: "fruit"}];
+  tasksForToday = [
+    {name: "Feed the cat", completed: "false"},
+    {name: "Walk the horse", completed: "false"},
+    {name: "Water the grass", completed: "false"}];
     
-    itemsInProgress= [
-      {name: "Walk the itemsInProgress", type: "fruit"}
+    tasksInProgress= [
+      {name: "A Task In Progress", completed: "false"}
     ]; 
-    itemsDone = [
-      {name: "Walk the itemsInProgress", type: "fruit"}
+    tasksDone = [
+      {name: "A Task Done", completed: "false"}
     ]; 
-    droppedItems = []; 
   
 
-  onItemDroppedToInProgress(e: any) {
+  onTaskDroppedToInProgress(e: any) {
     // Get the dropped data here
-    
     // TODO:  HERE connect to a service and make the changes in the db. 
-
-    //delete the dragged item 
-    this.items =  this.items.filter( i => i.name !== e.dragData.name );
-    this.itemsInProgress.push(e.dragData);
+    //delete the dragged task 
+    this.tasksForToday =  this.tasksForToday.filter( i => i.name !== e.dragData.name );
+    this.tasksInProgress.push(e.dragData);
     console.log("From In progress:");
-    console.log(this.itemsInProgress);
+    console.log(this.tasksInProgress);
   }
 
-  onItemDroppedToDone(e: any) {
-    
-    //delete item from in progress
+  onTaskDroppedToDone(e: any) {
+    //delete task from Tasks in progress
     console.log("From Dropped To Done: ");
-    console.log(this.itemsInProgress);
+    console.log(this.tasksInProgress);
     console.log("dragged Data: ");
     console.log(e.dragData);
-    
-    this.itemsInProgress =  this.itemsInProgress.filter( i => i.name !== e.dragData.name );
-    this.itemsDone.push(e.dragData);
-    console.log(this.itemsDone);
+    this.tasksInProgress =  this.tasksInProgress.filter( i => i.name !== e.dragData.name );
+    this.tasksDone.push(e.dragData);
+    console.log(this.tasksDone);
   }
 
   

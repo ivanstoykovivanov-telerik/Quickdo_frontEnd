@@ -11,36 +11,43 @@
   </div>
 </div>
 
-<div class="mt-5">
-  <h3 class="text-center mb-5">Today</h3>
 
+<!-- DRAG AND DROP -->
+<div class="container">
+  <div class="mt-5">
+  <h3 class="text-center mb-5">Today</h3>
+  
   <div class="row mt-5">
     <div class="col-sm-3">
       <div class="panel panel-default" >
         <div class="panel-heading">Today</div>
         <ul class="list-group">
-          <li draggable *ngFor="let item of items" [dragData]="item" class="list-group-item">{{item.name}}</li>
+          <li draggable class="list-group-task badge badge-primary my-1 d-block" *ngFor="let task of tasksForToday" [dragData]="task" >{{task.name}}</li>
         </ul>
       </div>
     </div>
 
     <div class="col-sm-3">
-      <div class="panel panel-default" droppable (onDrop)="onItemDroppedToInProgress($event)">
-        <div class="panel-heading">In Progress</div>
-        <div class="panel-body">
-          <li draggable *ngFor="let item of itemsInProgress" [dragData]="item" class="list-group-item"  draggable= "true"
-            >{{item.name}}</li>
+      <div class="card" droppable (onDrop)="onTaskDroppedToInProgress($event)">
+        <div class="card-body">
+          <div class="card-title">In Progress</div>
+          <div class="card-text">
+            <li draggable class="list-group-task badge badge-danger my-1 d-block" *ngFor="let task of tasksInProgress" [dragData]="task" draggable= "true"
+            >{{task.name}}</li>
+          </div>
         </div>
       </div>
     </div>
     
     <div class="col-sm-3">
-        <div class="panel panel-default" droppable (onDrop)="onItemDroppedToDone($event)">
-          <div class="panel-heading">Done</div>
-          <div class="panel-body">
-            <li draggable *ngFor="let item of itemsDone" [dragData]="item"  class="list-group-item">{{item.name}}</li>
+        <div class="card" droppable (onDrop)="onTaskDroppedToDone($event)">
+            <div class="card-body">
+          <div class="card-title">Done</div>
+          <div class="card-text">
+            <li draggable class="list-group-task badge badge-success my-1 d-block" *ngFor="let task of tasksDone" [dragData]="task" >{{task.name}}</li>
           </div>
         </div>
       </div>
   </div>
 </div>
+<!--// DRAG AND DROP -->
