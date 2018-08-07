@@ -12,26 +12,33 @@
 </div>
 
 <div class="mt-5">
-  <h3>Today</h3>
-  <div class="row">
+  <h3 class="text-center mb-5">Today</h3>
+
+  <div class="row mt-5">
     <div class="col-sm-3">
-      <ul class="list-group">
-        <li draggable *ngFor="let item of items" [dragData]="item" class="list-group-item">{{item.name}}</li>
-      </ul>
+      <div class="panel panel-default" >
+        <div class="panel-heading">Today</div>
+        <ul class="list-group">
+          <li draggable *ngFor="let item of items" [dragData]="item" class="list-group-item">{{item.name}}</li>
+        </ul>
+      </div>
     </div>
+
     <div class="col-sm-3">
-      <div class="panel panel-default" droppable (onDrop)="onItemDrop($event)">
+      <div class="panel panel-default" droppable (onDrop)="onItemDroppedToInProgress($event)">
         <div class="panel-heading">In Progress</div>
         <div class="panel-body">
-          <li *ngFor="let item of droppedItems" class="list-group-item">{{item.name}}</li>
+          <li draggable *ngFor="let item of itemsInProgress" [dragData]="item" class="list-group-item"  draggable= "true"
+            >{{item.name}}</li>
         </div>
       </div>
     </div>
+    
     <div class="col-sm-3">
-        <div class="panel panel-default" droppable (onDrop)="onItemDrop($event)">
-          <div class="panel-heading">In Progress</div>
+        <div class="panel panel-default" droppable (onDrop)="onItemDroppedToDone($event)">
+          <div class="panel-heading">Done</div>
           <div class="panel-body">
-            <li *ngFor="let item of droppedItems" class="list-group-item">{{item.name}}</li>
+            <li draggable *ngFor="let item of itemsDone" [dragData]="item"  class="list-group-item">{{item.name}}</li>
           </div>
         </div>
       </div>
